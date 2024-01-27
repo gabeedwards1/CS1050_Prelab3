@@ -1,0 +1,50 @@
+/*For the prelab assignment, you are to write a program that goes through all integers from 1 through 50
+in order from the least value (1) through the greatest value (50). As you move through these integers, if
+the current integer is divisible by 3, print “Fizz”. If the current integer is divisible by 5, print “Buzz”. If
+the current integer is divisible by both 5 and 3, print “Fizz Buzz”. If the current integer is divisible by
+neither 5 nor 3, print the integer. You should print a comma after each thing you print (whether “Fizz”,
+“Buzz”, “Fizz Buzz”, or a number), except for the last one. If you have trouble doing all but the last one,
+it is OK to print a comma after the last one too, but....cooler if you don’t*/
+
+#include <stdio.h>
+
+int main()
+{
+    int a = 1;
+
+    while(a<=50){
+    if(a % 3 == 0 && a % 5 == 0){
+        printf("Fizz Buzz");
+        /*this nested if statement stops the last one from having a comma
+        Probably a better way to do it but idc*/
+        if(a != 50){
+            printf(", ");
+        }
+    }
+    else if(a % 3 == 0){
+        printf("Fizz");
+        if(a != 50){
+            printf(", ");
+        }
+    }
+    else if(a % 5 == 0){
+        printf("Buzz");
+        if(a != 50){
+            printf(", ");
+        }
+    }
+    else if(a % 3 != 0){
+        printf("%d",a);
+        if(a != 50){
+            printf(", ");
+        }
+    }
+    else if(a % 5 != 0){
+        printf("%d ", a);
+        if(a != 50){
+            printf(", ");
+        }
+    }
+    a++; //increments a to go to the next integer
+    }
+}
